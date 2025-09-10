@@ -1,0 +1,47 @@
+/* Seletor Universal * */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  /* Agrupando background --> Podemos chamar de 'shorthand' ou 'atalho' : color image repeat position/size */
+  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+}
+
+/* O * é o seletor universal, ou seja, neste caso, ele vai aplicar em todos os elemtnos do body */
+body * {
+  font-family: "Inter", sans-serif;
+  color: #ffffffff;
+}
+
+#container {
+  width: 360px;
+  /* border: 1px solid red; */
+  /* height: 712px; Comentado pois a altura tem que seguir o conteúdo da página, ou seja, seu eu adicionar dados na estrutura, empurrará para baixo, sendo fluída ou flexível. */
+  margin: 56px auto 0px;
+  /* margin-top: 56px; margin-top ou padding-top */
+  /* margin: 56px; --> aplicará margem em todos os cantos (4) */
+  /* margin: 56px auto; --> aplicará 56px em cima e embaixo, e auto nas laterais */
+  /* margin: 56px auto 0px; --> aplicará 56px em cima, auto nas laterais e 0px embaixo */
+  /* margin: 56px auto 0px 2px; --> "RELÓGINHO" aplicará 56px em cima, auto na lateral direita, 0px embaixo e 2px na lateral esquerda */
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+  /* margin: auto; --> Comentei pois em elemento inline, eu não consigo aplicar margin auto. A IMAGEM É UM ELEMENTO INLINE!
+  DIV é um elemento block IMG é um elemento inline */
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
