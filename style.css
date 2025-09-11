@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   /* background-image: url(./assets/bg-mobile.jpg);
   background-repeat: no-repeat;
@@ -30,18 +31,98 @@ body * {
   /* margin: 56px auto; --> aplicará 56px em cima e embaixo, e auto nas laterais */
   /* margin: 56px auto 0px; --> aplicará 56px em cima, auto nas laterais e 0px embaixo */
   /* margin: 56px auto 0px 2px; --> "RELÓGINHO" aplicará 56px em cima, auto na lateral direita, 0px embaixo e 2px na lateral esquerda */
+  padding: 0 24px;
 }
+
 #profile {
   text-align: center;
   padding: 24px;
 }
+
 #profile img {
   width: 112px;
   /* margin: auto; --> Comentei pois em elemento inline, eu não consigo aplicar margin auto. A IMAGEM É UM ELEMENTO INLINE!
   DIV é um elemento block IMG é um elemento inline */
 }
+
 #profile p {
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
+}
+
+/* Links */
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Na ordem = background: rgba(red, green, blue, alpha); */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.5s;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px solid white;
+}
+
+/* Tamanho dos ícones nos botões */
+ul li a ion-icon {
+  font-size: 28px;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer .social-technologies {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Espaçamento entre os ícones do rodapé */
+  margin-top: 8px; /* Espaçamento entre o texto e ícones do rodapé */
+}
+
+footer .social-technologies a {
+  transition: transform 0.3s;
+}
+
+/* Tamanho dos ícones do rodapé */
+footer .social-technologies a ion-icon {
+  font-size: 16px;
+}
+
+footer .social-technologies a:hover {
+  transform: scale(
+    1.1
+  ); /* Efeito de zoom 10% ao passar o mouse nos ícones do rodapé */
 }
