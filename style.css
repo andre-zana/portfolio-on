@@ -12,6 +12,7 @@
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
@@ -21,6 +22,7 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
@@ -31,6 +33,7 @@ body {
 
   /* Agrupando background --> Podemos chamar de 'shorthand' ou 'atalho' : color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 /* O * é o seletor universal, ou seja, neste caso, ele vai aplicar em todos os elemtnos do body */
@@ -40,7 +43,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /* border: 1px solid red; */
   /* height: 712px; Comentado pois a altura tem que seguir o conteúdo da página, ou seja, seu eu adicionar dados na estrutura, empurrará para baixo, sendo fluída ou flexível. */
   margin: 56px auto 0px;
@@ -52,6 +56,7 @@ body * {
   padding: 0 24px;
 }
 
+/* profile */
 #profile {
   text-align: center;
   padding: 24px;
@@ -67,6 +72,49 @@ body * {
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
+}
+
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
+}
+
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: var(4px);
+  -webkit-backdrop-filter: var(4px);
+  border-radius: 9999px;
 }
 
 /* Links */
@@ -140,4 +188,35 @@ footer .social-technologies a:hover {
   transform: scale(
     1.1
   ); /* Efeito de zoom 10% ao passar o mouse nos ícones do rodapé */
+}
+
+/* media queries */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
