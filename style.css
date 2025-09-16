@@ -43,8 +43,8 @@ body * {
 }
 
 #container {
-  width: 100%;
-  max-width: 588px;
+  width: 100%; /* Pega a tela toda, independentemente do tamanho dela */
+  max-width: 588px; /* Os botões aumentam até 588px */
   /* border: 1px solid red; */
   /* height: 712px; Comentado pois a altura tem que seguir o conteúdo da página, ou seja, seu eu adicionar dados na estrutura, empurrará para baixo, sendo fluída ou flexível. */
   margin: 56px auto 0px;
@@ -191,6 +191,7 @@ footer .social-technologies a:hover {
 }
 
 /* media queries */
+/* Tudo que começa com @, é chamado de at-rule */
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
@@ -202,7 +203,6 @@ footer .social-technologies a:hover {
 }
 
 /* animation */
-
 @keyframes slide-in {
   from {
     left: 0;
